@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>AyushMapsMarkars</title>
+      <meta name="viewport" content="initial-scale=1.0,
+        width=device-width" />
+      <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+        type="text/javascript" charset="utf-8"></script>
+      <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+        type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body style="background-color: #DEF5E5;">
+
+
+        <center><div>
+            <div><h3>Please Enter the cords below to see on map</h3></div>
+            <input type="text" id="xinput" placeholder="x">
+            <input type="text" id="yinput" placeholder="y"><br>
+            <button onclick="acquire();" type="submit" style="margin: 0.5rem;">GO</button>
+            <h2>Hotel nearest to your location are</h2>
+
+            <h3><u><i><%= hotelName1 %></i></u></h3>
+            <p><b><%= x1%></b> <b><%= y1%></b></p>
+            <h3><u><i><%= hotelName2 %></i></u></h3>
+            <p><b><%= x2%></b> <b><%= y2%></b></p>
+            <h3><u><i><%= hotelName3 %></i></u></h3>
+            <p><b><%= x3%></b> <b><%= y3%></b></p>
+        </div></center>
+      
+      <div style="width: 640px; height: 480px ; display: flex; align-items: center; margin: 5% auto;"  id="mapContainer"></div>
+      <script>
+
+        var xlat = 48.8567 ; 
+        var ylat = 2.3508 ;
+
+        function acquire() {
+          const xelem = document.getElementById("xinput").value;
+          const yelem = document.getElementById("yinput").value;
+          xlat = xelem ; 
+          ylat = yelem ;
+
+          addMarkersToMap(map);
+        }
+        var platform = new H.service.Platform({
+        'apikey': 'mIfxvKJXhY9reSUCPTdSMlmRskkPDBYYIUecKb7LZZU'
+        });
+
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers();
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map,
+            {
+            zoom: 2,
+            center: { lat: 50, lng: 5 }
+        });
+
+        function addMarkersToMap(map) {
+          var parisMarker = new H.map.Marker({lat:xlat, lng:ylat});
+          map.addObject(parisMarker);
+      }
+      
+      </script>
+    </body>
+</html>

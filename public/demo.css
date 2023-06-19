@@ -1,0 +1,52 @@
+
+#map {
+    margin: 3rem;
+    width: 50%;
+    height: 450px;
+    background: grey;
+    display: inline-block;
+}
+
+#panel {
+    width: 30%;
+    height: auto;
+    background-color: #BCEAD5;
+    padding: 2rem;
+    margin: auto;
+}
+
+body{
+    background-color: #DEF5E5;
+}
+
+
+.btn {
+font-size:15px;
+font-family:Arial;
+margin: 1rem;
+width:80px;
+height:30px;
+border-width:1px;
+color:#fff;
+border-color:#599bb3;
+font-weight:bold;
+border-top-left-radius:8px;
+border-top-right-radius:8px;
+border-bottom-left-radius:8px;
+border-bottom-right-radius:8px;
+box-shadow: 0px 10px 14px -7px #276873;
+text-shadow: 0px 1px 0px #3d768a;
+background:linear-gradient(#599bb3, #408c99);
+}
+
+.btn:hover {
+background: linear-gradient(#408c99, #599bb3);
+}
+          
+.top-menu{
+    background-color: #BCEAD5;
+    width: 30%;
+    padding: 2rem;
+    margin: 2rem 2rem;
+    display: inline-block;
+}
